@@ -10,17 +10,29 @@ namespace Logical_Problem
     {
         public static void Problems()
         {
+            int sum = 0;
             Console.WriteLine("Enter the Number :- ");
             int N1 = Convert.ToInt32(Console.ReadLine());
-            int n1 = 0, n2 = 1;
-            Console.Write(n1 + "\n" + n2 + "\n");
-            for (int i = 0; i <= N1; i++)
+            for (int i = 1; i < N1; i++)
             {
-                int n3 = n1 + n2;
-                Console.WriteLine(n3 + " ");
-                n1 = n2;
-                n2 = n3;
+                if (N1 % i == 0)
+                {
+
+                    Console.Write(" " + i);
+                    sum = sum + i;
+                }
+            }
+            if (sum == N1)
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine(" {0} is Perfect Number", N1);
+            }
+            else
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine(" {0} is Not Perfect Number", N1);
             }
         }
+        }
     }
-}
+
