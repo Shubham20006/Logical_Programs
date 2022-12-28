@@ -10,29 +10,26 @@ namespace Logical_Problem
     {
         public static void Problems()
         {
-            int sum = 0;
+            int count = 0;
             Console.WriteLine("Enter the Number :- ");
             int N1 = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i < N1; i++)
+            for (int i = 1; i <= N1; i++)
             {
-                if (N1 % i == 0)
+                int C = (N1 % i);
+                if (C == 0)
                 {
-
-                    Console.Write(" " + i);
-                    sum = sum + i;
+                    count++;
                 }
             }
-            if (sum == N1)
+            if (count == 2)
             {
-                Console.WriteLine("\n");
-                Console.WriteLine(" {0} is Perfect Number", N1);
+                Console.WriteLine("Prime Number");
             }
             else
             {
-                Console.WriteLine("\n");
-                Console.WriteLine(" {0} is Not Perfect Number", N1);
+                Console.WriteLine("Not a Prime Number");
             }
         }
-        }
     }
+}
 
