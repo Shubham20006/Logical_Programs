@@ -10,17 +10,22 @@ namespace Logical_Problem
     {
         public static void Problems()
         {
-            int rev = 0;
-            Console.WriteLine("Enter the Starting Number :- ");
-            int N1 = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= N1; i++)
-            {
-                int C = (N1 % 10);
 
-                rev = (rev * 10) + C;
-                N1 = (N1 / 10);
+            Console.WriteLine("how much time you want a unique random number :- ");
+            int N1 = Convert.ToInt32(Console.ReadLine());
+            var Num = Enumerable.Range(0, N1).ToArray();
+            var R = new Random();
+
+            for (int i = 0; i < Num.Length; i++)
+            {
+                int RAN = R.Next(Num.Length);
+                int vr = Num[RAN];
+                Num[RAN] = Num[i];
+                Num[i] = vr;
             }
-            Console.WriteLine(rev);
+            Console.Write("The unique random numbers are :-  ");
+            for (int i = 0; i < Num.Length; i++)
+                Console.Write(Num[i] + " ");
         }
     }
 }
