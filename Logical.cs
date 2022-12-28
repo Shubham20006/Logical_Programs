@@ -10,25 +10,17 @@ namespace Logical_Problem
     {
         public static void Problems()
         {
-            int count = 0;
-            Console.WriteLine("Enter the Number :- ");
+            int rev = 0;
+            Console.WriteLine("Enter the Starting Number :- ");
             int N1 = Convert.ToInt32(Console.ReadLine());
             for (int i = 1; i <= N1; i++)
             {
-                int C = (N1 % i);
-                if (C == 0)
-                {
-                    count++;
-                }
+                int C = (N1 % 10);
+
+                rev = (rev * 10) + C;
+                N1 = (N1 / 10);
             }
-            if (count == 2)
-            {
-                Console.WriteLine("Prime Number");
-            }
-            else
-            {
-                Console.WriteLine("Not a Prime Number");
-            }
+            Console.WriteLine(rev);
         }
     }
 }
