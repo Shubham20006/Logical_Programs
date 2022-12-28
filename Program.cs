@@ -9,6 +9,7 @@ namespace Logical_Problem
         {
 
             Console.WriteLine("Welcome to the logical program.");
+            Logical.Problems();
         }
     }
 }
