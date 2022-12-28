@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,21 +12,19 @@ namespace Logical_Problem
         public static void Problems()
         {
 
-            Console.WriteLine("how much time you want a unique random number :- ");
-            int N1 = Convert.ToInt32(Console.ReadLine());
-            var Num = Enumerable.Range(0, N1).ToArray();
-            var R = new Random();
+            // Create new stopwatch
+            Stopwatch stopwatch = new Stopwatch();
 
-            for (int i = 0; i < Num.Length; i++)
-            {
-                int RAN = R.Next(Num.Length);
-                int vr = Num[RAN];
-                Num[RAN] = Num[i];
-                Num[i] = vr;
-            }
-            Console.Write("The unique random numbers are :-  ");
-            for (int i = 0; i < Num.Length; i++)
-                Console.Write(Num[i] + " ");
+            // Begin timing
+            Console.WriteLine("Press Enter for start");
+            Console.ReadLine();
+            stopwatch.Start();
+
+            // Stop timing
+            Console.WriteLine("Press Enter for stop");
+            Console.ReadLine();
+            stopwatch.Stop();
+            Console.WriteLine("Time Elapsed : {0}", stopwatch.Elapsed);
         }
     }
 }
