@@ -13,7 +13,7 @@ namespace Logical_Problem
             int rev = 0;
             Console.WriteLine("Enter the Starting Number :- ");
             int N1 = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= N1; i++)
+            for (int i = 0; i != N1;)
             {
                 int C = (N1 % 10);
 
